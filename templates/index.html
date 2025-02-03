@@ -14,23 +14,51 @@
             <input type="file" name="file" id="file" accept="image/*" required>
             
             <br><br>
-            
+
+            <!-- Width Slider -->
             <label for="width">Width (px):</label>
-            <input type="number" name="width" id="width" value="300" min="1" required>
+            <input type="range" id="widthRange" name="width" min="1" max="1600" value="300" oninput="updateWidthValue(this.value)">
+            <input type="number" id="widthValue" value="300" min="1" max="1600" oninput="updateWidthSlider(this.value)" required>
             
+            <br><br>
+
+            <!-- Height Slider -->
             <label for="height">Height (px):</label>
-            <input type="number" name="height" id="height" value="300" min="1" required>
+            <input type="range" id="heightRange" name="height" min="1" max="1000" value="300" oninput="updateHeightValue(this.value)">
+            <input type="number" id="heightValue" value="300" min="1" max="1000" oninput="updateHeightSlider(this.value)" required>
             
             <br><br>
             
             <button type="submit">Upload and Resize</button>
         </form>
-
+        
         <!-- Display the resized image if available -->
         {% if filename %}
         <h2>Resized Image:</h2>
         <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Resized Image">
         {% endif %}
     </div>
+
+    <script>
+        // Update width value when slider changes
+        function updateWidthValue(value) {
+            document.getElementById('widthValue').value = value;
+        }
+
+        // Update width slider when number input changes
+        function updateWidthSlider(value) {
+            document.getElementById('widthRange').value = value;
+        }
+
+        // Update height value when slider changes
+        function updateHeightValue(value) {
+            document.getElementById('heightValue').value = value;
+        }
+
+        // Update height slider when number input changes
+        function updateHeightSlider(value) {
+            document.getElementById('heightRange').value = value;
+        }
+    </script>
 </body>
 </html>
