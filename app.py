@@ -6,7 +6,7 @@ import os  # For file path operations
 app = Flask(__name__)
 
 # Folder where uploaded images will be stored
-UPLOAD_FOLDER = '/Users/cihankilicarslan/PictureRsize/uploads'
+UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Allowed file extensions
