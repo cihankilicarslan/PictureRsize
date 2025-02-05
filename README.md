@@ -43,16 +43,7 @@ Enter the desired width and height for your resized image.
 Resize and Download:
 Click the "Upload and Resize" button.
 The resized image will be displayed on the page, and you can download it from the uploads folder.
-📂 Project Structure
 
-/image-resizer
-    ├── app.py                # Main Flask application file
-    ├── uploads/              # Folder to store uploaded and resized images
-    ├── templates/
-    │   └── index.html        # HTML template for the frontend
-    ├── static/
-    │   └── style.css         # CSS file for styling
-    └── README.md             # This file
 🔧 Dependencies
 Flask: Lightweight web framework for Python.
 OpenCV-Python: Library for image processing.
